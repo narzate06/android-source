@@ -14,6 +14,7 @@ public interface SalsaDancer {
 	 *
 	 * @return nothing
 	 */
+    public void putOnShoes();
 
 	/*
 	 * findAPartner
@@ -22,6 +23,7 @@ public interface SalsaDancer {
 	 *
 	 * @return nothing
 	 */
+    public void findAPartner();
 
 	/*
 	 * salsa
@@ -30,4 +32,5 @@ public interface SalsaDancer {
 	 *
 	 * @return nothing
 	 */
+    public void salsa();
 }

@@ -4,8 +4,13 @@ package com.bloc.securitypackages;
  *	ASSIGNMENT:
  *	Import the appopriate classes/packages below
 /************************************************/
-
 // e.g. import com.bloc.{your_package};
+import com.bloc.securitypackages.*;
+import com.bloc.securitypackages.Fruit;
+import com.bloc.securitypackages.Color;
+import com.bloc.securitypackages.apples.*;
+import com.bloc.securitypackages.citrus.*;
+import com.bloc.securitypackages.colors.*;
 
 /************************************************
  *	DO NOT MODIFY BELOW THIS BLOCK

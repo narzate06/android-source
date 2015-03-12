@@ -1,6 +1,7 @@
 ## Interfaces
 
-Open your command prompt and `cd` into this README's directory (`foundation/24-interfaces`). Populate three separate interfaces: `Driver.java`, `Skydiver.java` and `SalsaDancer.java`.
+Open your command prompt and `cd` into this README's directory (`foundation/24-interfaces`).
+Populate three separate interfaces: `Driver.java`, `Skydiver.java` and `SalsaDancer.java`.
 
 Have the three people classes (`Albert.java`, `Mary.java`, `John.java`) implement the appropriate interfaces as expected by `Main.java`.
 
