@@ -17,9 +17,27 @@ public class Main extends Object {
 	 	 *	Replace the operations below by employing polymorphism
 		/************************************************/
 
-		dog.feed();
+
+
+
+		Pet[] pets = new Pet[5];
+        pets[0] = bird;
+        pets[1] = cat;
+        pets[2] = dog;
+        pets[3] = snake;
+        pets[4] = tarantula;
+
+        for (int i = 0; i < pets.length; i++){
+            pets[i].feed();
+            pets[i].wash();
+            pets[i].exercise();
+        }
+
+
+        /*dog.feed();
 		dog.wash();
 		dog.exercise();
+
 
 		cat.feed();
 		cat.wash();
@@ -35,7 +53,7 @@ public class Main extends Object {
 
 		tarantula.feed();
 		tarantula.wash();
-		tarantula.exercise();
+		tarantula.exercise();*/
 
 		/************************************************
 	 	 *	ASSIGNMENT:
