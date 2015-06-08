@@ -20,6 +20,11 @@ public class RecursionUtils extends Object {
 	 	 *	Implement this method, the return value must
 	 	 *	change
 		/************************************************/
-		return 0;
+		if (numbers.size() == 1) {
+
+            return numbers;
+        }
+
+		return numbers * findMaxRecursively(numbers - 1);
 	}
 }

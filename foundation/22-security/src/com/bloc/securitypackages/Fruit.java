@@ -1,5 +1,7 @@
 package com.bloc.securitypackages;
 
+import com.bloc.securitypackages.*;
+
 /************************************************
  *	YOU MAY MODIFY THIS FILE AND/OR ITS LOCATION
 /************************************************/

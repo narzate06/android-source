@@ -3,18 +3,18 @@ package com.bloc.securitypackages;
 /************************************************
  *	YOU MAY MODIFY THIS FILE AND/OR ITS LOCATION
 /************************************************/
-import com.bloc.securitypackages.colors.*;
+
 public class Color extends Object {
 	// Name of the color
-	String mName;
+	private String mName;
 	// Alpha value
-	int mAlpha;
+	private int mAlpha;
 	// Red value
-	int mRed;
+	private int mRed;
 	// Green value
-	int mGreen;
+	private int mGreen;
 	// Blue value
-	int mBlue;
+	private int mBlue;
 
 	public Color(int red, int green, int blue) {
 		this(null, red, green, blue);

@@ -4,6 +4,7 @@ package com.bloc.securitypackages.apples;
  *	YOU MAY MODIFY THIS FILE AND/OR ITS LOCATION
 /************************************************/
 import com.bloc.securitypackages.colors.*;
+import com.bloc.securitypackages.Fruit;
 
  public class Green extends Apple {
 

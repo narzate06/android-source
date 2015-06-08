@@ -1,6 +1,11 @@
 package com.bloc.collections;
 
+import java.lang.Integer;
+import java.lang.String;
 import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /*
  * FavoritePastries
@@ -24,13 +29,18 @@ public class FavoritePastries {
 	 *	Use a HashMap to store the relationship
 	 *	between rating and pastry: HashMap<Integer, List<Pastry>>
 	/************************************************/
-
+    private HashMap<Integer, String> mapPastries;
 
 	public FavoritePastries() {
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
-	}
+
+        //private Map<Integer, Pastry> pastryMap = new HashMap<Integer, Pastry>();
+
+        mapPasties = new HashMap<Integer, String>();
+
+    }
 
 	/* 
 	 * addPastry
@@ -51,6 +61,8 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
+
+        mapPastries.put(pastry, rating);
 	}
 
 	/* 
@@ -69,7 +81,11 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
-		return false;
+
+        mapPastries.remove(pastry) {
+
+        }
+		return true;
 	}
 
 	/* 
