@@ -29,7 +29,7 @@ public class FavoritePastries {
 	 *	Use a HashMap to store the relationship
 	 *	between rating and pastry: HashMap<Integer, List<Pastry>>
 	/************************************************/
-    private HashMap<Integer, String> mapPastries;
+    private HashMap<Integer, Pastry> mPastryMap;
 
 	public FavoritePastries() {
 		/************************************************
@@ -38,7 +38,7 @@ public class FavoritePastries {
 
         //private Map<Integer, Pastry> pastryMap = new HashMap<Integer, Pastry>();
 
-        mapPasties = new HashMap<Integer, String>();
+        mPastryMap = new HashMap<Integer, Pastry>();
 
     }
 
@@ -61,8 +61,8 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
+        mPastryMap.put(rating, pastry);
 
-        mapPastries.put(pastry, rating);
 	}
 
 	/* 
@@ -81,11 +81,10 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
+                mPastryMap.remove(pastry);
+                return true;
+            }
 
-        mapPastries.remove(pastry) {
-
-        }
-		return true;
 	}
 
 	/* 
@@ -106,7 +105,13 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
-		return -1;
+
+		mPastryMap.get(pastry){
+            return pastry;
+        }
+        return -1;
+
+
 	}
 
 	/* 
