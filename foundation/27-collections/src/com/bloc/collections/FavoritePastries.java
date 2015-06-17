@@ -4,8 +4,10 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.*;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /*
  * FavoritePastries
@@ -29,7 +31,7 @@ public class FavoritePastries {
 	 *	Use a HashMap to store the relationship
 	 *	between rating and pastry: HashMap<Integer, List<Pastry>>
 	/************************************************/
-    private HashMap<Integer, Pastry> mPastryMap;
+    private HashMap<Integer, List<Pastry>> mPastryMap;
 
 	public FavoritePastries() {
 		/************************************************
@@ -38,7 +40,7 @@ public class FavoritePastries {
 
         //private Map<Integer, Pastry> pastryMap = new HashMap<Integer, Pastry>();
 
-        mPastryMap = new HashMap<Integer, Pastry>();
+        mPastryMap = new HashMap<Integer, List<Pastry>>();
 
     }
 
@@ -61,8 +63,15 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE
 		/************************************************/
-        mPastryMap.put(rating, pastry);
-
+        if(getRatingForPastry(pastry) > -1){
+            removePastry(pastry);
+        }
+        List<Pastry> pastryList = mPastryMap.get(rating);
+        if(pastryList == null) {
+            pastryList = new List<Pastry>();
+        }
+        pastryList.add(pastry);
+        mPastryMap.put(rating, pastryList);
 	}
 
 	/* 
@@ -81,9 +90,12 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
-                mPastryMap.remove(pastry);
-                return true;
-            }
+                if (getRatingForPastry(pastry) > -1){
+					mPastryMap.remove(pastry);
+
+                    return true;
+				}
+                return false;
 
 	}
 
@@ -106,11 +118,13 @@ public class FavoritePastries {
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
 
-		mPastryMap.get(pastry){
-            return pastry;
-        }
+		for (Integer rating : mPastryMap.keySet()){
+		   List<Pastry> listPastries = mPastryMap.get(rating);
+           if (listPastries.contains(pastry)){
+               return rating;
+           }
+		}
         return -1;
-
 
 	}
 
@@ -134,6 +148,16 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
+
+        for (Pastry pastry : mPastryMap.get(rating)){
+            Set<Pastry> mySetPastry = new HashSet<Pastry>();
+            //List<Pastry> listPastries = mPastryMap.get(rating);
+            mySetPastry = mPastryMap.get(pastry);
+            if (mySetPastry.contains(pastry)){
+                return mySetPastry;
+            }
+        }
+
 		return null;
 	}
 
