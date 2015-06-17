@@ -145,16 +145,16 @@ public class FavoritePastries {
 	 *         found
 	 */
 	public Collection<Pastry> getPastriesForRating(int rating) {
-		/************************************************
- 	 	 *	WORK HERE, you must modify the return value
-		/************************************************/
-
+        /************************************************
+         *	WORK HERE, you must modify the return value
+         /************************************************/
 
 
         List<Pastry> listPastries = mPastryMap.get(rating);
-        Set<Pastry> myPastrySet = listPastries.get(rating);
+        Set<Pastry> myPastrySet = new HashSet<Pastry>();
+        if (myPastrySet.containsAll(listPastries)){
             return myPastrySet;
-			}
-			return null;
-
+        }
+        return null;
+    }
 }
