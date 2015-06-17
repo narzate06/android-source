@@ -68,7 +68,7 @@ public class FavoritePastries {
         }
         List<Pastry> pastryList = mPastryMap.get(rating);
         if(pastryList == null) {
-            pastryList = new List<Pastry>();
+            pastryList = new ArrayList<Pastry>();
         }
         pastryList.add(pastry);
         mPastryMap.put(rating, pastryList);
@@ -149,16 +149,12 @@ public class FavoritePastries {
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
 
-        for (Pastry pastry : mPastryMap.get(rating)){
-            Set<Pastry> mySetPastry = new HashSet<Pastry>();
-            //List<Pastry> listPastries = mPastryMap.get(rating);
-            mySetPastry = mPastryMap.get(pastry);
-            if (mySetPastry.contains(pastry)){
-                return mySetPastry;
-            }
-        }
 
-		return null;
-	}
+
+        List<Pastry> listPastries = mPastryMap.get(rating);
+        Set<Pastry> myPastrySet = listPastries.get(rating);
+            return myPastrySet;
+			}
+			return null;
 
 }
