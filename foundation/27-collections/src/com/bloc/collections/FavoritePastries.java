@@ -155,6 +155,6 @@ public class FavoritePastries {
         if (myPastrySet.containsAll(listPastries)){
             return myPastrySet;
         }
-        return null;
+        return myPastrySet.isEmpty();
     }
 }
