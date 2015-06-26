@@ -3,6 +3,8 @@ package com.bloc.collections;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -151,10 +153,14 @@ public class FavoritePastries {
 
 
         List<Pastry> listPastries = mPastryMap.get(rating);
-        Set<Pastry> myPastrySet = new HashSet<Pastry>();
-        if (myPastrySet.containsAll(listPastries)){
-            return myPastrySet;
+        Set<Pastry> myPastrySet = new HashSet<Pastry>(listPastries);
+         if(myPastrySet.contains(rating)) {
+             return myPastrySet;
+         }
+         Set<Pastry> myEmptySet = Collections.emptySet();
+        return  myEmptySet;
         }
-        return myPastrySet.isEmpty();
+
+
     }
-}
+
