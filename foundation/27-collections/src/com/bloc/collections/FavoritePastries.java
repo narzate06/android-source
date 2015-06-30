@@ -1,15 +1,15 @@
 package com.bloc.collections;
 
+
 import java.lang.Integer;
-import java.lang.String;
-import java.util.*;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
 import java.util.Set;
+
 
 /*
  * FavoritePastries
@@ -92,8 +92,10 @@ public class FavoritePastries {
 		/************************************************
  	 	 *	WORK HERE, you must modify the return value
 		/************************************************/
-                if (getRatingForPastry(pastry) > -1){
-					mPastryMap.remove(pastry);
+        int rating = getRatingForPastry(pastry);
+                if (rating > -1){
+					List<Pastry> pastryList = mPastryMap.get(rating);
+                    pastryList.remove(pastry);
 
                     return true;
 				}
@@ -121,8 +123,8 @@ public class FavoritePastries {
 		/************************************************/
 
 		for (Integer rating : mPastryMap.keySet()){
-		   List<Pastry> listPastries = mPastryMap.get(rating);
-           if (listPastries.contains(pastry)){
+		   List<Pastry> pastries = mPastryMap.get(rating);
+           if (pastries.contains(pastry)){
                return rating;
            }
 		}
@@ -152,13 +154,12 @@ public class FavoritePastries {
          /************************************************/
 
 
-        List<Pastry> listPastries = mPastryMap.get(rating);
-        Set<Pastry> myPastrySet = new HashSet<Pastry>(listPastries);
-         if(myPastrySet.contains(rating)) {
-             return myPastrySet;
+        List<Pastry> pastryList = mPastryMap.get(rating);
+        Set<Pastry> set = new HashSet<Pastry>();
+         if(pastryList!= null) {
+             set.addAll(pastryList);
          }
-         Set<Pastry> myEmptySet = Collections.emptySet();
-        return  myEmptySet;
+         return set;
         }
 
 
