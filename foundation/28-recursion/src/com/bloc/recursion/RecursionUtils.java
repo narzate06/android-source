@@ -1,6 +1,9 @@
 package com.bloc.recursion;
 
+import java.lang.Integer;
 import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RecursionUtils extends Object {
 	/*
@@ -20,11 +23,24 @@ public class RecursionUtils extends Object {
 	 	 *	Implement this method, the return value must
 	 	 *	change
 		/************************************************/
-		if (numbers.size() == 1) {
 
-            return numbers;
+        int size = numbers.size();
+
+        if (size == 1) {
+             return numbers.get(0);
+        }else if (size == 2) {
+            return numbers.get(0) > numbers.get(1) ? numbers.get(0) : numbers.get(1);
+        }else {
+            int half = size/2;
+            List<Integer> firstHalf = numbers.subList(0, half);
+            List<Integer> secondHalf = numbers.subList(half, size);
+
+            int firstHalfMax = findMaxRecursively(firstHalf);
+            int secondHalfMax = findMaxRecursively(secondHalf);
+
+            return firstHalfMax > secondHalfMax ? firstHalfMax : secondHalfMax;
         }
+    }
 
-		return numbers * findMaxRecursively(numbers - 1);
-	}
+
 }
