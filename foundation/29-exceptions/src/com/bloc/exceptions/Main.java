@@ -9,13 +9,18 @@ package com.bloc.exceptions;
  *	this is bad practice.
 /************************************************/
 
+import java.lang.Exception;
+import java.lang.IllegalArgumentException;
+import java.lang.System;
 import java.util.Random;
 
 public class Main extends Object {
 
 	public static void main(String [] args) {
-		tryGetMax();
-		tryRemove();
+
+            tryGetMax();
+            tryRemove();
+
 
 		System.out.println("/************************/");
 		System.out.println("/*                      */");
@@ -31,8 +36,10 @@ public class Main extends Object {
 	 *	ASSIGNMENT:
  	 *	Catch thrown exceptions
 	/************************************************/
-	private static final void tryGetMax() {
+
+    private static final void tryGetMax() {
 		int max = 0;
+        try {
 		max = FunMethods.getMax((Integer[])null);
 		Integer[] numbers = new Integer[50];
 		Random rand = new Random();
@@ -43,14 +50,20 @@ public class Main extends Object {
 		max = FunMethods.getMax(numbers);
 		numbers[32] = new Integer(rand.nextInt(500));
 		max = FunMethods.getMax(numbers);
-	}
+	    }catch (IllegalArgumentException exception){
+            System.out.println(exception.getMessage());
+        }
+    }
+
+
 
 	/************************************************
 	 *	ASSIGNMENT:
  	 *	Catch thrown exceptions
 	/************************************************/
 	private static final void tryRemove() {
-		FunMethods.remove(null, 2);
+        try {
+        FunMethods.remove(null, 2);
 		Object[] someObjects = new Object[12];
 		someObjects[0] = "a string!";
 		someObjects[1] = new Integer(32);
@@ -61,5 +74,10 @@ public class Main extends Object {
 		}
 		FunMethods.remove(someObjects, 12);
 		someObjects = FunMethods.remove(someObjects, 3);
-	}
+	    }catch (IllegalArgumentException exception){
+            System.out.println(exception.getMessage());
+        }
+
+    }
+
 }
