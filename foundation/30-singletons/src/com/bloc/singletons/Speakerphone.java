@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Speakerphone extends Object {
 
-	Speakerphone instance;
+	static Speakerphone instance;
 	List<Listener> listeners;
 
 	public Speakerphone(){
@@ -117,12 +117,12 @@ public class Speakerphone extends Object {
 	 * HINT: see Class.isAssignableFrom()
 	 *		 http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html#isAssignableFrom(java.lang.Class)
 	 */
-	 public void shoutMessage(Talker talker){
+	 public void shoutMessage(Talker talker, Class cls){
+
+		if  (Talker.class.isAssignableFrom(cls)){
+			shoutMessage(talker);
+		}
 
 	 }
-	/************************************************
-	 *	ASSIGNMENT:
-	 *	Implement the shoutMessage method
-	/************************************************/
 
 }
